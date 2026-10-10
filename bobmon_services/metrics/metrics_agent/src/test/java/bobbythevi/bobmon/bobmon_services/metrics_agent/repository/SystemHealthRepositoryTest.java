@@ -32,7 +32,7 @@ class SystemHealthRepositoryTest {
                 captured_at TEXT NOT NULL,
                 memory_usage DOUBLE PRECISION NOT NULL,
                 cpu_usage DOUBLE PRECISION NOT NULL,
-                gpu_memory_usages TEXT NOT NULL
+                gpu_memory_usages DOUBLE PRECISION ARRAY NOT NULL
             );
             """);
 

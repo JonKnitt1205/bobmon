@@ -16,13 +16,21 @@
     <dependencies>
         <dependency>
             <groupId>bobbythevi</groupId>
-            <artifactId>metrics-common</artifactId>
+            <artifactId>bobmon-common-utils</artifactId>
             <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>bobbythevi</groupId>
-            <artifactId>bobmon-data</artifactId>
+            <artifactId>metrics-common</artifactId>
             <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
         </dependency>
         <dependency>
             <groupId>com.github.oshi</groupId>

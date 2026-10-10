@@ -10,7 +10,7 @@ import bobbythevi.bobmon.bobmon_services.metrics_common.model.SystemStatsResourc
 import lombok.RequiredArgsConstructor;
 
 @Service
-@RequiredArgsConstructor  
+@RequiredArgsConstructor
 public class SystemHealthService {
     private final SystemHealthRepository systemHealthRepository;
 

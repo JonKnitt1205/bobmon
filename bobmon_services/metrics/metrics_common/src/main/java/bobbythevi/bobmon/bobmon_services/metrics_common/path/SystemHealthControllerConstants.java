@@ -1,6 +1,4 @@
-package bobbythevi.bobmon.bobmon_services.metrics_agent.controller;
-
-import org.springframework.http.HttpMethod;
+package bobbythevi.bobmon.bobmon_services.metrics_common.path;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -8,8 +6,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class SystemHealthControllerConstants {
     public static final String SYSTEM_HEALTH_PATH = "/system_health";
-    
-    public static enum PATH {
+
+    public enum PATH {
         SYSTEM_HEALTH(SYSTEM_HEALTH_PATH);
 
         public final String value;
@@ -18,13 +16,9 @@ public class SystemHealthControllerConstants {
             this.value = value;
         }
 
-        @Override 
+        @Override
         public String toString() {
             return value;
         }
-    }
-
-    public static String LOG_CONTROLLER(PATH path, HttpMethod method) {
-        return String.format("Recieved %s request for path %s", method.name(), path.value);
     }
 }
