@@ -1,5 +1,6 @@
 package bobbythevi.bobmon.bobmon_services.metrics_agent.monitor;
 
+import java.time.ZonedDateTime;
 import java.util.List;
 
 import org.springframework.scheduling.annotation.Scheduled;
@@ -18,9 +19,10 @@ public class SystemHealthMonitor {
 
     private static final int SCHEDULED_DELAY_MS = 1000;
 
-    @Scheduled(fixedDelay = SCHEDULED_DELAY_MS)
+    @Scheduled(fixedRate = SCHEDULED_DELAY_MS)
     public void collectSystemStats() {
         SystemStatsResource systemStatsResource = SystemStatsResource.builder()
+            .timestamp(ZonedDateTime.now())
             .memoryUsage(calculateMemoryUsage())
             .cpuUsage(calculateCpuUsage())
             .gpuMemoryUsages(calculateGpuMemoryUsages())

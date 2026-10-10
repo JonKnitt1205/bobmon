@@ -12,7 +12,7 @@
 
     <groupId>bobbythevi</groupId>
     <artifactId>bobmon-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${revision}</version>
     <packaging>pom</packaging>
     <name>bobmon-parent</name>
     <description>System health monitoring project</description>
@@ -25,14 +25,21 @@
     </scm>
 
     <modules>
+        <module>bobmon_data</module>
         <module>bobmon_services</module>
         <module>bobmon_app</module>
     </modules>
 
     <properties>
+        <revision>0.0.1-SNAPSHOT</revision>
         <java.version>25</java.version>
+        <spring-boot.version>4.1.1</spring-boot.version>
         <oshi.version>7.6.1</oshi.version>
+        <swagger-annotations.version>2.2.32</swagger-annotations.version>
         <node.version>v22.14.0</node.version>
+        <frontend-maven-plugin.version>1.15.0</frontend-maven-plugin.version>
+        <postgresql.version>42.7.4</postgresql.version>
+        <h2.version>2.3.232</h2.version>
     </properties>
 
     <!-- Shared dependency versions, NOT actually pulled in unless a child declares them -->
@@ -44,9 +51,25 @@
                 <version>${oshi.version}</version>
             </dependency>
             <dependency>
-                <groupId>bobbythevi</groupId>
-                <artifactId>metrics-common</artifactId>
-                <version>${project.version}</version>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-annotations-jakarta</artifactId>
+                <version>${swagger-annotations.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-jdbc</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${h2.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -70,7 +93,7 @@
                 <plugin>
                     <groupId>com.github.eirslett</groupId>
                     <artifactId>frontend-maven-plugin</artifactId>
-                    <version>1.15.0</version>
+                    <version>${frontend-maven-plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>

@@ -1,0 +1,28 @@
+# TODO List
+
+- System health service:
+  - can call a graceful restart machine command
+  - status checking scheduled job that writes to the db
+  - request for time based system resource usage data
+- The database (stores all of the stats)
+- Database health service:
+  - can call restart on database
+  - status checking scheduled job (can call restart) on db
+- Minecraft server service
+  - view players online
+  - track player metrics?
+    - playtime (would require tracking leavinga and joining times)
+    - deaths
+  - can restart minecraft server
+  - status checking scheduled job (can restart mc server)
+  - can select servers to start from a list
+  - sends message if server crashes?
+  - write events to a log (crashes)
+- Frontend applciation
+  - accessible from internet
+  - has access to the above services
+    - can view stats in graphs that are so pretty, wow!
+  - guest/logged in role
+    - guest can view
+    - logged in can restart stuff, take certain actions, etc
+    - mobile friendly design

@@ -6,7 +6,7 @@
     <parent>
         <groupId>bobbythevi</groupId>
         <artifactId>metrics</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
 
     <artifactId>metrics-agent</artifactId>
@@ -17,6 +17,12 @@
         <dependency>
             <groupId>bobbythevi</groupId>
             <artifactId>metrics-common</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>bobbythevi</groupId>
+            <artifactId>bobmon-data</artifactId>
+            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>com.github.oshi</groupId>
@@ -34,6 +40,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

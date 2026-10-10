@@ -3,6 +3,8 @@ package bobbythevi.bobmon.bobmon_services.metrics_agent.controller;
 import java.time.ZonedDateTime;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpMethod;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,15 +17,15 @@ import bobbythevi.bobmon.bobmon_services.metrics_agent.controller.SystemHealthCo
 import bobbythevi.bobmon.bobmon_services.metrics_agent.service.SystemHealthService;
 import bobbythevi.bobmon.bobmon_services.metrics_common.model.SystemStatsResource;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping(SystemHealthControllerConstants.SYSTEM_HEALTH_PATH)
 @Validated
-@AllArgsConstructor
-@Slf4j
+@RequiredArgsConstructor
 public class SystemHealthController {
+    private static final Logger log = LoggerFactory.getLogger(SystemHealthController.class);
+
     private final SystemHealthService systemHealthService;
 
     @GetMapping
