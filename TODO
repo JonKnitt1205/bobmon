@@ -18,6 +18,7 @@
   - can select servers to start from a list
   - sends message if server crashes?
   - write events to a log (crashes)
+  - save backups on a schedule and be able to replace current instance with a backup
 - Frontend applciation
   - accessible from internet
   - has access to the above services
